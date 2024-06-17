@@ -1,7 +1,9 @@
-![Main Window two](https://github.com/saasscaleup/laravel-stream-log/blob/master/lcl-saasscaleup.png?raw=true)
+![Main Window two](https://github.com/saasscaleup/laravel-console-log/blob/master/lcl-saasscaleup.png?raw=true)
 
-<h3 align="center">Easily stream your Laravel application logs to the browser console tab (console.log) in real-time using server-sent event (SSE)</h3>
+<h2 align="center">Easily stream your Laravel application logs to the browser console tab (console.log) in real-time using server-sent event (SSE)</h2>
 
+<h4 align="center">This package lets backend developers easily print messages and values in terminal. This is the php version of console log for Laravel.
+Compatible with Laravel v5+.</h4>
 <h4 align="center">
   <a href="https://youtube.com/@ScaleUpSaaS">Youtube</a>
   <span> · </span>
