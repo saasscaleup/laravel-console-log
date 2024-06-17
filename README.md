@@ -13,28 +13,27 @@
 </h4>
 
 <p align="center">
-   <a href="https://packagist.org/packages/saasscaleup/laravel-stream-log">
-      <img src="https://poser.pugx.org/saasscaleup/laravel-stream-log/v/stable.png" alt="Latest Stable Version">
+   <a href="https://packagist.org/packages/saasscaleup/laravel-console-log">
+      <img src="https://poser.pugx.org/saasscaleup/laravel-console-log/v/stable.png" alt="Latest Stable Version">
   </a>
 
-  <a href="https://packagist.org/packages/saasscaleup/laravel-stream-log">
-      <img src="https://poser.pugx.org/saasscaleup/laravel-stream-log/downloads.png" alt="Total Downloads">
+  <a href="https://packagist.org/packages/saasscaleup/laravel-console-log">
+      <img src="https://poser.pugx.org/saasscaleup/laravel-console-log/downloads.png" alt="Total Downloads">
   </a>
 
-  <a href="https://packagist.org/packages/saasscaleup/laravel-stream-log">
-    <img src="https://poser.pugx.org/saasscaleup/laravel-stream-log/license.png" alt="License">
+  <a href="https://packagist.org/packages/saasscaleup/laravel-console-log">
+    <img src="https://poser.pugx.org/saasscaleup/laravel-console-log/license.png" alt="License">
   </a>
 </p>
 
 ## ✨ Features
 
-- **Easily stream your Backend events from your Controllers \ Events \ Models \ Etc... .** 
-- **Easily stream your Logs (`storage/logs/laravel.log`).**
-- **Print Backend logs and events to Frontend browser `console.log(data)`** 
+- **Easily stream your Backend events from your Controllers \ Events \ Models \ Etc...  to Frontend browser console tab(`console.log')(data)`).** 
+- **Easily stream your Application Logs (`storage/logs/laravel.log`)to Frontend browser console tab (`console.log')(data)`).**
 
 <br>
 
-![banner](https://github.com/saasscaleup/laravel-stream-log/blob/master/lcl-demo.gif?raw=true)
+![banner](https://github.com/saasscaleup/laravel-console-log/blob/master/lcl-demo.gif?raw=true)
 <br>
 
 
@@ -50,7 +49,7 @@
 Via Composer - Not recommended for production environment
 
 ``` bash
-$ composer require --dev saasscaleup/laravel-stream-log
+$ composer require --dev saasscaleup/laravel-console-log
 ```
 
 #### For Laravel < 5.5
@@ -87,10 +86,17 @@ $ php artisan migrate
 
 ## Setup Laravel Console Log -> LCL 
 
-Aadd this in your main view/layout (usually `layout/app.blade.php`) file:
+Aadd this in your main view/layout (usually `layout/app.blade.php`) file before </body>:
 
 ```php
 @include('lcl::view')
+```
+
+```php
+<body>
+...
+@include('lcl::view')
+</body>
 ```
 
 ## Configuration
@@ -134,12 +140,6 @@ return [
     // eanlbed console log on browser
     'js_console_log_enabled' => env('LCL_JS_CONSOLE_LOG_ENABLED', true),
 
-     // js notification toast library
-    'js_notification_library' => env('LCL_JS_NOTIFICATION_LIBRARY', 'noty'), // 'izitoast' or 'noty'
-
-    // notification settings
-    'js_position' => 'bottomRight', // topLeft, topCenter, topRight, center, bottomLeft, bottomCenter, bottomRight
-    'js_timeout' => 5000, // false, 1000, 3000, 3500, etc. Delay for closing event in milliseconds (ms). Set 'false' for sticky notifications.
 ];
 ```
 
@@ -153,7 +153,7 @@ Syntax:
 * @param string $type : alert, success, error, warning, info, debug, critical, etc...
 * @param string $event : Type of event such as "EmailSent", "UserLoggedIn", etc
  */
-LCLFacade::notify($message, $type = 'info', $event = 'stream')
+LCLFacade::notify($message, $type = 'info', $event = 'stream-console-log')
 ```
 
 To show popup notifications on the screen, in your controllers/event classes, you can  do:
@@ -178,6 +178,13 @@ public function myFunction()
     stream_log('Invoke stream log via helper 1');
     stream_log('Invoke stream log via helper 2');     
     stream_log('Invoke stream log via helper 3');
+
+
+    // or using your application
+    \Log::info('Invoke stream log via application log 1');
+    \Log::error('Invoke stream log via application log 2');
+    \Log::debug('Invoke stream log via application log 3');
+
 }
 ```
 
@@ -189,11 +196,11 @@ You can also, customize this by modifying code in `resources/views/vendor/lcl/vi
 
 ## Customizing LCL Events
 
-By default, pacakge uses `stream-console-log` event type for streaming response:
+By default, package uses `stream-console-log` event type for streaming response:
 
 
 ```php
-LCLFacade::notify($message, $type = 'info', $event = 'message')
+LCLFacade::notify($message, $type = 'info', $event = 'stream-console-log')
 ```
 
 Notice `$event = 'stream-console-log'`. You can customize this, let's say you want to use `UserPurchase` as SSE event type:
