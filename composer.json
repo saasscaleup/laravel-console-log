@@ -1,0 +1,56 @@
+{
+    "name": "saasscaleup/laravel-console-log",
+    "description": "Easily stream your Laravel application logs to the browser console.log in real-time using server-sent event (SSE)",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Scale-Up SaaS",
+            "email": "saasscaleup@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/saasscaleup/laravel-console-log",
+    "keywords": [
+        "Laravel",
+        "SSE",
+        "Sever Sent Events",
+        "SeverEvents",
+        "Server",
+        "Event",
+        "Realtime",
+        "Polling",
+        "Notifications",
+        "Stream Log",
+        "Log",
+        "Laravel Log",
+        "Debug",
+        "Laravel Debug",
+        "Console log"
+    ],
+    "require": {
+        "php": "^7.0|^8.0",
+        "illuminate/support": "~5|~6|~7|~8|~9|~10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Saasscaleup\\LCL\\": "src/"
+        },
+        "files": [
+            "src/Helpers/helper.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Saasscaleup\\LCL\\LCLServiceProvider"
+            ],
+            "aliases": {
+                "LCL": "Saasscaleup\\LCL\\Facades\\LCLFacade"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
