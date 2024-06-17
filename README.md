@@ -51,7 +51,7 @@ Compatible with Laravel v5+.</h4>
 Via Composer - Not recommended for production environment
 
 ``` bash
-$ composer require --dev saasscaleup/laravel-console-log
+composer require --dev saasscaleup/laravel-console-log
 ```
 
 #### For Laravel < 5.5
@@ -75,7 +75,7 @@ Add Facade to `config/app.php` in `aliases` section
 Publish package's config, migration and view files by running below command:
 
 ```bash
-$ php artisan vendor:publish --provider="Saasscaleup\LCL\LCLServiceProvider"
+php artisan vendor:publish --provider="Saasscaleup\LCL\LCLServiceProvider"
 ```
 
 ### Run migration command
@@ -83,12 +83,12 @@ $ php artisan vendor:publish --provider="Saasscaleup\LCL\LCLServiceProvider"
 Run `php artisan migrate` to create `stream_console_logs` table.
 
 ```bash
-$ php artisan migrate
+php artisan migrate
 ```
 
 ## Setup Laravel Console Log -> LCL 
 
-Aadd this in your main view/layout (usually `layout/app.blade.php`) file before </body>:
+Add this in your main view/layout (usually `layout/app.blade.php`) file before </body>:
 
 ```php
 @include('lcl::view')
