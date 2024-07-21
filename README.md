@@ -11,7 +11,7 @@ Compatible with Laravel v5+.</h4>
   <span> · </span>
   <a href="https://facebook.com/ScaleUpSaaS">Facebook</a>
   <span> · </span>
-  <a href="https://buymeacoffee.com/scaleupsaas">By Me a Coffee</a>
+  <a href="https://buymeacoffee.com/scaleupsaas">Buy Me a Coffee</a>
 </h4>
 
 <p align="center">
