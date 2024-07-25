@@ -16,15 +16,15 @@ Compatible with Laravel v5+.</h4>
 
 <p align="center">
    <a href="https://packagist.org/packages/saasscaleup/laravel-console-log">
-      <img src="https://poser.pugx.org/saasscaleup/laravel-console-log/v/stable.png" alt="Latest Stable Version">
+      <img src="https://img.shields.io/packagist/v/saasscaleup/laravel-console-log.svg?style=flat-square" alt="Latest Stable Version">
   </a>
 
   <a href="https://packagist.org/packages/saasscaleup/laravel-console-log">
-      <img src="https://poser.pugx.org/saasscaleup/laravel-console-log/downloads.png" alt="Total Downloads">
+      <img src="https://img.shields.io/packagist/dt/saasscaleup/laravel-console-log.svg?style=flat-square" alt="Total Downloads">
   </a>
 
   <a href="https://packagist.org/packages/saasscaleup/laravel-console-log">
-    <img src="https://poser.pugx.org/saasscaleup/laravel-console-log/license.png" alt="License">
+    <img src="https://img.shields.io/packagist/l/saasscaleup/laravel-console-log.svg?style=flat-square" alt="License">
   </a>
 </p>
 
